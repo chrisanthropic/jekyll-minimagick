@@ -36,7 +36,7 @@ module Jekyll
       #
       # Returns false if the file was not modified since last time (no-op).
       def write(dest)
-        dest_path = destination(dest)
+        dest_path = File.join(@base, @dst_dir, @name)
 
         return false if File.exist? dest_path and !modified?
 

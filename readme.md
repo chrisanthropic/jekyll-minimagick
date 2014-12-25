@@ -8,12 +8,7 @@ Basic Setup
 -----------
 Install the gem:
 
-	[sudo] gem install jekyll-minimagick
-
-In a plugin file within your Jekyll project's _plugins directory:
-
-	# _plugins/my-plugin.rb
-	require "jekyll-minimagick"
+	add mini_magick.rb to your _plugins directory
 
 Define presets in your _config.yml file, like this:
 
@@ -32,17 +27,6 @@ This configuration will create a 100x100 thumbnail for each image in
 _img/photos/original_ and put it in _\_site/img/photos/thumbnail_ and a 600x400
 image in _\_site/img/photos/medium_.
 
-Bundler Setup
--------------
-Already using bundler to manage gems for your Jekyll project?  Then just add
+**NOTE**
 
-	gem "jekyll-minimagick"
-
-to your gemfile and create the following plugin in your projects _plugins 
-directory.  I've called mine bundler.rb.  This will automatically require all 
-of the gems specified in your Gemfile.
-
-	# _plugins/bundler.rb
-	require "rubygems"
-	require "bundler/setup"
-	Bundler.require(:default)
+  Destination is relative to the source directory (the directory your config.yml sits in, by default).
